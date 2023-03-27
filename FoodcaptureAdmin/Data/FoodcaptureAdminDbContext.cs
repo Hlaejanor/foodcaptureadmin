@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using FoodcaptureAdmin.Entities;
+using Microsoft.EntityFrameworkCore;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.FeatureManagement.EntityFrameworkCore;
@@ -12,6 +13,9 @@ namespace FoodcaptureAdmin.Data;
 
 public class FoodcaptureAdminDbContext : AbpDbContext<FoodcaptureAdminDbContext>
 {
+
+    public DbSet<LogEntry> LogEntries { get; set; }
+
     public FoodcaptureAdminDbContext(DbContextOptions<FoodcaptureAdminDbContext> options)
         : base(options)
     {
@@ -31,6 +35,5 @@ public class FoodcaptureAdminDbContext : AbpDbContext<FoodcaptureAdminDbContext>
         builder.ConfigureFeatureManagement();
         builder.ConfigureTenantManagement();
 
-        /* Configure your own entities here */
     }
 }

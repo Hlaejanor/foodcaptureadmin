@@ -90,10 +90,16 @@
     <Content Remove="Logs\**" />
     <EmbeddedResource Remove="Logs\**" />
     <None Remove="Logs\**" />
+    <None Remove="Common\" />
+    <None Remove="Common\Enums\" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Remove="$(UserProfile)\.nuget\packages\*\*\contentFiles\any\*\*.abppkg*.json" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Common\" />
+    <Folder Include="Common\Enums\" />
+  </ItemGroup>
 </Project>
